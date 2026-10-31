@@ -2,10 +2,6 @@
 
 Ein einfaches Python-Übungsprojekt für die Konsole. Einträge lassen sich anzeigen, hinzufügen und entfernen. Doppelte Einträge werden abgewiesen; außerdem kann die Liste vollständig geleert werden.
 
-## Starten
-
-Python 3 muss installiert sein. Starte die Datei im Terminal mit:
-
 ```bash
 python listenverwaltung.py
 ```
