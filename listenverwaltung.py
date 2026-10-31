@@ -1,53 +1,42 @@
-# Einfache Listenverwaltung für die Konsole
-
-liste = []
+x = []
 
 while True:
-    eingabe = input(
-        "Aufgabe: anzeigen = a / hinzufügen = h / entfernen = e / beenden = b: "
-    )
+    eingabe = input("Aufgabe: anzeigen = a / hinzufügen = h / entfernen = e / beenden = b: ")
     while eingabe not in ["a", "h", "e", "b"]:
-        eingabe = input(
-            "Fehler! Aufgabe: anzeigen = a / hinzufügen = h / "
-            "entfernen = e / beenden = b: "
-        )
-
+        eingabe = input("Fehler! Aufgabe: anzeigen = a / hinzufügen = h / entfernen = e / beenden = b: ")
     if eingabe == "a":
-        print(liste)
+        print(x)
     elif eingabe == "h":
         while True:
-            eintrag = input("Was möchtest du hinzufügen? (b = zurück): ")
-            if eintrag.lower() == "b":
+            b = input("Was möchtest du hinzufügen? Falls beenden = b: ")
+            if b in x:
+                print("Fehler! in der Liste vorhanden ")
+            elif b == "b":
                 break
-            elif eintrag in liste:
-                print("Fehler! Dieser Eintrag ist bereits in der Liste.")
             else:
-                liste.append(eintrag)
+                x.append(b)
     elif eingabe == "e":
         while True:
-            aktion = input(
-                "Alles entfernen = a / Eine Sache entfernen = e / Zurück = b: "
-            )
-            if aktion not in ["a", "e", "b"]:
-                print("Fehler! Bitte a, e oder b eingeben.")
-            elif aktion == "a":
-                liste.clear()
-                print("Die Liste wurde geleert.")
+            g = input("Möchtest du alles entfernen = a / Eine Sache = e / falls beenden = b: ")
+            if g not in ["a", "e", "b"]:
+                print("Fehler! Falsche Eingabe")
+            elif g == "a":
+                x.clear()
+                print("alles gelöscht / wurde beendet!")
                 break
-            elif aktion == "e":
+            elif g == "e":
                 while True:
-                    eintrag = input("Was möchtest du löschen? (z = zurück): ")
-                    if eintrag in liste:
-                        liste.remove(eintrag)
-                        print(eintrag, "wurde gelöscht.")
-                    elif eintrag.lower() == "z":
-                        break
+                    z = input("Was möchtest du löschen? / falls zurück = z: ")
+                    if z != "z" and z not in x:
+                        print("Fehler! in der Liste nicht vorhanden / falsche Eingabe")
+                        print(x)
+                    elif z in x:
+                        x.remove(z)
+                        print(z, "wurde gelöscht")
                     else:
-                        print("Fehler! Dieser Eintrag ist nicht in der Liste.")
-                        print(liste)
+                        break
             else:
                 break
     else:
         break
-
-print("----- Programm beendet -----")
+print("-----Programm beendet-----")
