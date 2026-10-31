@@ -37,11 +37,11 @@ while True:
             elif aktion == "e":
                 while True:
                     eintrag = input("Was möchtest du löschen? (z = zurück): ")
-                    if eintrag.lower() == "z":
-                        break
-                    elif eintrag in liste:
+                    if eintrag in liste:
                         liste.remove(eintrag)
                         print(eintrag, "wurde gelöscht.")
+                    elif eintrag.lower() == "z":
+                        break
                     else:
                         print("Fehler! Dieser Eintrag ist nicht in der Liste.")
                         print(liste)
